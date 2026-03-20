@@ -6,15 +6,17 @@ package objetosDominio;
 
 /**
  *
- * @author botel
+ * @author mildr
  */
-public class ProductoGranel extends Producto {
-    private float cantidad;
+public class ProductoGranel extends Producto{
+    
+    private float cantidad; 
+    
+    public ProductoGranel() {
+    }
 
-    public ProductoGranel() {}
-
-    public ProductoGranel(Producto producto, float cantidad) {
-        super(producto);
+    public ProductoGranel(Producto producto,float cantidad) {
+        super(producto); 
         this.setCantidad(cantidad);
     }
 
@@ -23,16 +25,18 @@ public class ProductoGranel extends Producto {
         this.cantidad = 0.0f;
     }
 
-    public float getCantidad() { 
-        return cantidad; 
+    public float getCantidad() {
+        return cantidad;
     }
-    
+
     public void setCantidad(float cantidad) {
-      
+        this.cantidad = cantidad;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "," + cantidad;
+        return "ProductoGranel{" + "cantidad=" + cantidad + '}';
     }
+    
+    
 }

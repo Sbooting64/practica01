@@ -6,33 +6,43 @@ package objetosDominio;
 
 /**
  *
- * @author botel
+ * @author mildr
  */
-
 public class ProductoEmpacado extends Producto {
+    
     private int cantidad;
-
-    public int getCantidad() { 
-        return cantidad; 
+    
+    public ProductoEmpacado(){
+        
     }
     
-    public void setCantidad(int cantidad) {}
-    public ProductoEmpacado() {}
-
-    public ProductoEmpacado(Producto producto, int cantidad) {
-        super(producto);
+    public ProductoEmpacado(Producto producto,int cantidad){
+        super(producto); 
         this.setCantidad(cantidad);
     }
-
-    public ProductoEmpacado(Producto producto) {
+    
+    public ProductoEmpacado(Producto producto){
         super(producto);
         this.cantidad = 0;
     }
 
-    
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
 
     @Override
     public String toString() {
-        return super.toString() + "," + cantidad;
+        return "ProductoEmpacado{" + "cantidad=" + cantidad + '}';
     }
+    
+    
+    
+    
+            
+            
+    
 }

@@ -4,41 +4,86 @@
  */
 package objetosDominio;
 
+import java.util.Date;
+import java.util.Objects;
+
 /**
  *
- * @author botel
+ * @author mildr
  */
-import java.time.LocalDate;
-
 public class Movimiento {
+    
     private String cveMovimiento;
-    private LocalDate fecha;
+    private Date fecha;
     private boolean procesado;
-
-    public String getCveMovimiento() {
-        return cveMovimiento;
+    
+    //Constructores
+    public Movimiento (){
+        
     }
-
-    public void setCveMovimiento(String cveMovimiento) {
-        this.cveMovimiento = cveMovimiento;
-    }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
-
-    public boolean isProcesado() {
-        return procesado;
-    }
-
-    public void setProcesado(boolean procesado) {
-        this.procesado = procesado;
+   
+    public Movimiento(String cveMovimiento, Date fecha, boolean procesado){
+        
     }
     
+    public Movimiento(String cveMoviento){
+        
+    }
+    public Movimiento(Movimiento otro){
+        
+    }
+    
+    public String getCveMovimiento(){
+        return null;
+    }
+    
+    public void setCveMoviento(String cveMoviento){
+        
+    }
+    
+    public Date getFecha(){
+        return null;
+    }
+    
+    public void setFecha(Date fecha){
+        
+    }
+    
+    public boolean getProcesado(){
+        return false;
+    }
+    
+    public void setProcesado(boolean procesado){
+        
+    }
 
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Movimiento other = (Movimiento) obj;
+        return Objects.equals(this.cveMovimiento, other.cveMovimiento);
+    }
+
+    @Override
+    public String toString() {
+        return "Movimiento{" + "cveMovimiento=" + cveMovimiento + ", fecha=" + fecha + ", procesado=" + procesado + '}';
+    }
+    
+    
+    
     
 }
