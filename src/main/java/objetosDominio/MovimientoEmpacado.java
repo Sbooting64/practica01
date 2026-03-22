@@ -22,15 +22,16 @@ public class MovimientoEmpacado extends Movimiento{
     }
     
     public MovimientoEmpacado(Date fecha, boolean procesado, ProductoEmpacado productoEmpacado){
-        
+        super(fecha, procesado);
+        this.setProductoEmpacado(productoEmpacado);
     }
     
-    public MovimientoEmpacado(MovimientoEmpacado otro){
-        
+    public MovimientoEmpacado(String cveMovimiento){
+        super(cveMovimiento);
     }
 
     public ProductoEmpacado getProductoEmpacado() {
-        return null;
+        return productoEmpacado;
     }
 
     public void setProductoEmpacado(ProductoEmpacado productoEmpacado) {

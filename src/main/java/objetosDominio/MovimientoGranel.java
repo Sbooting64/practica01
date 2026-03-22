@@ -4,11 +4,13 @@
  */
 package objetosDominio;
 
+import java.util.Date;
+
 /**
  *
  * @author mildr
  */
-public class MovimientoGranel {
+public class MovimientoGranel extends Movimiento{
     
     private ProductoGranel productoGranel;
     
@@ -16,10 +18,16 @@ public class MovimientoGranel {
         
     }
             
-    public MovimientoGranel(ProductoGranel productoGranel){
-        
+    public MovimientoGranel(Date fecha, boolean procesado, ProductoGranel productoGranel){
+        super(fecha, procesado);
+        this.setProductoGranel(productoGranel);
     }
 
+    public MovimientoGranel(String cveMovimiento){
+        super(cveMovimiento);
+    
+    }
+    
     public ProductoGranel getProductoGranel() {
         return productoGranel;
     }

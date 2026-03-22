@@ -25,7 +25,7 @@ public class Movimiento {
         
     }
    
-    public Movimiento(String cveMovimiento, Date fecha, boolean procesado){
+    public Movimiento( Date fecha, boolean procesado){
         /* "MV%03d" es una cadena de formato. mv es con lo que comenzara
          * % indica que se inicia a especificar un formato de texto
          * 0 se usa como un relleno, 3 es el ancho minimo que se usara. 
