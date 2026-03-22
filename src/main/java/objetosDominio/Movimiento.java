@@ -17,36 +17,50 @@ public class Movimiento {
     private Date fecha;
     private boolean procesado;
     
+    //variable encargada de llevar el conteo de movimientos
+    private static int contador = 1;
+    
     //Constructores
     public Movimiento (){
         
     }
    
     public Movimiento(String cveMovimiento, Date fecha, boolean procesado){
-        
+        /* "MV%03d" es una cadena de formato. mv es con lo que comenzara
+         * % indica que se inicia a especificar un formato de texto
+         * 0 se usa como un relleno, 3 es el ancho minimo que se usara. 
+         * por si solo deberia imprimir MV000, pero para eso existe "d",
+         * el cual indica que se ingresara un numero decimal al formato
+         * se remplazara el ultimo 0 con el numero del contador, dando 
+         * de resultado MV001
+        */
+        this.cveMovimiento = String.format("MV%03d", contador++);
+        setFecha(fecha);
+        this.procesado = procesado;
     }
     
     public Movimiento(String cveMoviento){
-        
+        this.cveMovimiento = cveMovimiento;
+        this.fecha = null;
+        this.procesado = false;
     }
-    public Movimiento(Movimiento otro){
-        
-    }
+    
     
     public String getCveMovimiento(){
         return null;
     }
     
     public void setCveMoviento(String cveMoviento){
+        this.cveMovimiento=cveMovimiento;
         
     }
     
     public Date getFecha(){
-        return null;
+        return fecha;
     }
     
     public void setFecha(Date fecha){
-        
+        this.fecha=fecha;
     }
     
     public boolean getProcesado(){
@@ -54,7 +68,7 @@ public class Movimiento {
     }
     
     public void setProcesado(boolean procesado){
-        
+        this.procesado=procesado;
     }
 
     @Override

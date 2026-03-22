@@ -4,11 +4,14 @@
  */
 package objetosDominio;
 
+import java.util.Date;
+
+
 /**
  *
  * @author mildr
  */
-public class MovimientoEmpacado {
+public class MovimientoEmpacado extends Movimiento{
     
     private ProductoEmpacado productoEmpacado;
     
@@ -18,7 +21,7 @@ public class MovimientoEmpacado {
         
     }
     
-    public MovimientoEmpacado(ProductoEmpacado productoEmpacado){
+    public MovimientoEmpacado(Date fecha, boolean procesado, ProductoEmpacado productoEmpacado){
         
     }
     
