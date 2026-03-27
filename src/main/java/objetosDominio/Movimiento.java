@@ -4,7 +4,7 @@
  */
 package objetosDominio;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Movimiento {
     
     private String cveMovimiento;
-    private Date fecha;
+    private LocalDate fecha;
     private boolean procesado;
     
     //variable encargada de llevar el conteo de movimientos
@@ -25,7 +25,7 @@ public class Movimiento {
         
     }
    
-    public Movimiento( Date fecha, boolean procesado){
+    public Movimiento( LocalDate fecha, boolean procesado){
         /* "MV%03d" es una cadena de formato. mv es con lo que comenzara
          * % indica que se inicia a especificar un formato de texto
          * 0 se usa como un relleno, 3 es el ancho minimo que se usara. 
@@ -55,11 +55,11 @@ public class Movimiento {
         
     }
     
-    public Date getFecha(){
+    public LocalDate getFecha(){
         return fecha;
     }
     
-    public void setFecha(Date fecha){
+    public void setFecha(LocalDate fecha){
         this.fecha=fecha;
     }
     

@@ -4,7 +4,8 @@
  */
 package objetosDominio;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 /**
  *
@@ -18,7 +19,7 @@ public class MovimientoGranel extends Movimiento{
         
     }
             
-    public MovimientoGranel(Date fecha, boolean procesado, ProductoGranel productoGranel){
+    public MovimientoGranel(LocalDate fecha, boolean procesado, ProductoGranel productoGranel){
         super(fecha, procesado);
         this.setProductoGranel(productoGranel);
     }

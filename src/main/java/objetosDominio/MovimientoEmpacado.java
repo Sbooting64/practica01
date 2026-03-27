@@ -4,7 +4,8 @@
  */
 package objetosDominio;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 
 /**
@@ -21,7 +22,7 @@ public class MovimientoEmpacado extends Movimiento{
         
     }
     
-    public MovimientoEmpacado(Date fecha, boolean procesado, ProductoEmpacado productoEmpacado){
+    public MovimientoEmpacado(LocalDate fecha, boolean procesado, ProductoEmpacado productoEmpacado){
         super(fecha, procesado);
         this.setProductoEmpacado(productoEmpacado);
     }
