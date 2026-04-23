@@ -22,24 +22,48 @@ public class Producto {
     }
     
     public Producto(String clave, String nombre, char tipo, String unidad) {
-        this.setClave(clave);
-        this.setNombre(nombre);
-        this.setTipo(tipo);
-        this.setUnidad(unidad);
+        try {
+            this.setClave(clave);
+            this.setNombre(nombre);
+            this.setTipo(tipo);
+            this.setUnidad(unidad);
+        } catch (Exception ex) {
+            System.err.println("error al crear Producto: " + ex.getMessage());
+            this.clave = null;
+            this.nombre = null;
+            this.tipo = ' ';
+            this.unidad = null;
+        }
     }
     
     public Producto(String clave){
-        this.clave = clave;
-        this.nombre = null;
-        this.tipo = ' ';
-        this.unidad = null;
+        try {
+            this.clave = clave;
+            this.nombre = null;
+            this.tipo = ' ';
+            this.unidad = null;
+        } catch (Exception ex) {
+            System.err.println("error al crear Producto con clave: " + ex.getMessage());
+            this.clave = null;
+            this.nombre = null;
+            this.tipo = ' ';
+            this.unidad = null;
+        }
     }
     
     public Producto(Producto producto){
-        this.clave = producto.getClave();
-        this.nombre = producto.getNombre();
-        this.tipo = producto.getTipo();
-    this.unidad = producto.getUnidad();
+        try {
+            this.clave = producto.getClave();
+            this.nombre = producto.getNombre();
+            this.tipo = producto.getTipo();
+            this.unidad = producto.getUnidad();
+        } catch (Exception ex) {
+            System.err.println("error al copiar Producto: " + ex.getMessage());
+            this.clave = null;
+            this.nombre = null;
+            this.tipo = ' ';
+            this.unidad = null;
+        }
         
     }
 
@@ -60,19 +84,36 @@ public class Producto {
     }
 
     public void setClave(String clave) {
-        this.clave = clave;
+        try {
+            this.clave = clave;
+        } catch (Exception ex) {
+            System.err.println("error al asignar clave: " + ex.getMessage());
+        }
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        try {
+            this.nombre = nombre;
+        } catch (Exception ex) {
+            System.err.println("error al asignar nombre: " + ex.getMessage());
+        }
     }
 
     public void setTipo(char tipo) {
-        this.tipo = tipo;
+        try {
+            this.tipo = tipo;
+        } catch (Exception ex) {
+            System.err.println("error al asignar tipo: " + ex.getMessage());
+            this.tipo = ' ';
+        }
     }
 
     public void setUnidad(String unidad) {
-        this.unidad = unidad;
+        try {
+            this.unidad = unidad;
+        } catch (Exception ex) {
+            System.err.println("error al asignar unidad: " + ex.getMessage());
+        }
     }
 
     @Override

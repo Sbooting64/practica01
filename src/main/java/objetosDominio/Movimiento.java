@@ -34,15 +34,29 @@ public class Movimiento {
          * se remplazara el ultimo 0 con el numero del contador, dando 
          * de resultado MV001
         */
-        this.cveMovimiento = String.format("MV%03d", contador++);
-        setFecha(fecha);
-        this.procesado = procesado;
+       try {
+            this.cveMovimiento = String.format("MV%03d", contador++);
+            setFecha(fecha);
+            this.procesado = procesado;
+        } catch (Exception ex) {
+            System.err.println("error al crear Movimiento: " + ex.getMessage());
+            this.cveMovimiento = "MV000";
+            this.fecha = null;
+            this.procesado = false;
+        }
     }
     
     public Movimiento(String cveMoviento){
-        this.cveMovimiento = cveMovimiento;
-        this.fecha = null;
-        this.procesado = false;
+        try {
+            this.cveMovimiento = cveMoviento;
+            this.fecha = null;
+            this.procesado = false;
+        } catch (Exception ex) {
+            System.err.println("error al crear Movimiento con clave: " + ex.getMessage());
+            this.cveMovimiento = null;
+            this.fecha = null;
+            this.procesado = false;
+        }
     }
     
     
@@ -51,7 +65,11 @@ public class Movimiento {
     }
     
     public void setCveMoviento(String cveMoviento){
-        this.cveMovimiento=cveMovimiento;
+        try {
+            this.cveMovimiento = cveMoviento;
+        } catch (Exception ex) {
+            System.err.println("error al asignar clave de movimiento: " + ex.getMessage());
+        }
         
     }
     
@@ -60,7 +78,12 @@ public class Movimiento {
     }
     
     public void setFecha(LocalDate fecha){
-        this.fecha=fecha;
+        try {
+            this.fecha = fecha;
+        } catch (Exception ex) {
+            System.err.println("error al asignar fecha: " + ex.getMessage());
+            this.fecha = null;
+        }
     }
     
     public boolean getProcesado(){
@@ -68,7 +91,12 @@ public class Movimiento {
     }
     
     public void setProcesado(boolean procesado){
-        this.procesado=procesado;
+        try {
+            this.procesado = procesado;
+        } catch (Exception ex) {
+            System.err.println("error al asignar procesado: " + ex.getMessage());
+            this.procesado = false;
+        }
     }
 
     @Override

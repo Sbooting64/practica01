@@ -21,7 +21,12 @@ public class MovimientoGranel extends Movimiento{
             
     public MovimientoGranel(LocalDate fecha, boolean procesado, ProductoGranel productoGranel){
         super(fecha, procesado);
-        this.setProductoGranel(productoGranel);
+        try {
+            this.setProductoGranel(productoGranel);
+        } catch (Exception ex) {
+            System.err.println("error al inicializar el producto granel: " + ex.getMessage());
+            this.productoGranel = null;
+        }
     }
 
     public MovimientoGranel(String cveMovimiento){
@@ -34,7 +39,12 @@ public class MovimientoGranel extends Movimiento{
     }
 
     public void setProductoGranel(ProductoGranel productoGranel) {
-        this.productoGranel = productoGranel;
+        try {
+            this.productoGranel = productoGranel;
+        } catch (Exception ex) {
+            System.err.println("error al asignar producto granel: " + ex.getMessage());
+            this.productoGranel = null;
+        }
     }
 
     @Override

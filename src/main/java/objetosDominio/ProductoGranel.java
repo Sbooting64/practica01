@@ -17,12 +17,22 @@ public class ProductoGranel extends Producto{
 
     public ProductoGranel(Producto producto,float cantidad) {
         super(producto); 
-        this.setCantidad(cantidad);
+        try {
+            this.setCantidad(cantidad);
+        } catch (Exception ex) {
+            System.err.println("error al crear ProductoGranel: " + ex.getMessage());
+            this.cantidad = 0.0f;
+        }
     }
 
     public ProductoGranel(Producto producto) {
         super(producto);
-        this.cantidad = 0.0f;
+        try {
+            this.cantidad = 0.0f;
+        } catch (Exception ex) {
+            System.err.println("error al crear ProductoGranel con producto: " + ex.getMessage());
+            this.cantidad = 0.0f;
+        }
     }
 
     public float getCantidad() {
@@ -30,7 +40,12 @@ public class ProductoGranel extends Producto{
     }
 
     public void setCantidad(float cantidad) {
-        this.cantidad = cantidad;
+        try {
+            this.cantidad = cantidad;
+        } catch (Exception ex) {
+            System.err.println("error al asignar cantidad: " + ex.getMessage());
+            this.cantidad = 0.0f;
+        }
     }
 
     @Override

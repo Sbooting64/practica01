@@ -18,12 +18,22 @@ public class ProductoEmpacado extends Producto {
     
     public ProductoEmpacado(Producto producto,int cantidad){
         super(producto); 
-        this.setCantidad(cantidad);
+        try {
+            this.setCantidad(cantidad);
+        } catch (Exception ex) {
+            System.err.println("error al crear ProductoEmpacado: " + ex.getMessage());
+            this.cantidad = 0;
+        }
     }
     
     public ProductoEmpacado(Producto producto){
         super(producto);
-        this.cantidad = 0;
+        try {
+            this.cantidad = 0;
+        } catch (Exception ex) {
+            System.err.println("error al crear ProductoEmpacado con producto: " + ex.getMessage());
+            this.cantidad = 0;
+        }
     }
 
     public int getCantidad() {
@@ -31,7 +41,12 @@ public class ProductoEmpacado extends Producto {
     }
 
     public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+        try {
+            this.cantidad = cantidad;
+        } catch (Exception ex) {
+            System.err.println("error al asignar cantidad: " + ex.getMessage());
+            this.cantidad = 0;
+        }
     }
 
     @Override

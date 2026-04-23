@@ -24,7 +24,12 @@ public class MovimientoEmpacado extends Movimiento{
     
     public MovimientoEmpacado(LocalDate fecha, boolean procesado, ProductoEmpacado productoEmpacado){
         super(fecha, procesado);
-        this.setProductoEmpacado(productoEmpacado);
+        try {
+            this.setProductoEmpacado(productoEmpacado);
+        } catch (Exception ex) {
+            System.err.println("error al inicializar el producto empacado: " + ex.getMessage());
+            this.productoEmpacado = null;
+        }
     }
     
     public MovimientoEmpacado(String cveMovimiento){
@@ -36,7 +41,12 @@ public class MovimientoEmpacado extends Movimiento{
     }
 
     public void setProductoEmpacado(ProductoEmpacado productoEmpacado) {
-        this.productoEmpacado = productoEmpacado;
+        try {
+            this.productoEmpacado = productoEmpacado;
+        } catch (Exception ex) {
+            System.err.println("error al asignar producto empacado: " + ex.getMessage());
+            this.productoEmpacado = null;
+        }
     }
 
     @Override
